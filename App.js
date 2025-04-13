@@ -33,7 +33,8 @@ class App extends Component {
     let randomNumber = Math.floor(Math.random() * this.phases.length);
 
     this.setState({
-      textPhase: this.phases[randomNumber]
+      textPhase: '"' +  this.phases[randomNumber] + '"',
+      img: require('./src/images/openBiscuit.png'),
     })
 
   }

@@ -1,11 +1,11 @@
-import React, { Component } from 'react'; // importa o React
-import { View, Text } from 'react-native'; //importa o componente "View" do React Native
+import React, { Component } from 'react'; 
+import { View, Text, StyleSheet } from 'react-native'; 
 
 class App extends Component {
   render() {
     return(
       <View>
-        <Text>Olá</Text>
+        
       </View>
     );
   }

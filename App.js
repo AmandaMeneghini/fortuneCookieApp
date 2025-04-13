@@ -8,17 +8,47 @@ import {
   } from 'react-native'; 
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      textPhase: '',
+      img: require('./src/images/biscuit.png'),
+    };
+
+    this.brokenBiscuit = this.brokenBiscuit.bind(this);
+    
+    this.phases = [
+      'Siga os bons e aprenda com eles.',
+      'O bom-senso vale mais do que muito conhecimento.',
+      'O riso e a menor distancia entre duas pessoas.',
+      'Deixe de lado as preocupações e seja feliz.',
+      'Realize o óbvio, pense no improvável e conquiste o impossível.',
+      'Acredite em milagres, mas não dependa deles.',
+      'A maior barreira para o sucesso e o medo do fracasso.'
+    ];
+  }
+
+  brokenBiscuit(){
+    let randomNumber = Math.floor(Math.random() * this.phases.length);
+
+    this.setState({
+      textPhase: this.phases[randomNumber]
+    })
+
+  }
+
   render() {
     return(
       <View style={styles.container}>
         <Image 
-        source={require('./src/images/biscuit.png')}
+        source={this.state.img}
         style={styles.img}
         />
 
-        <Text style={styles.textPhase}>"Alguma Frase Aqui"</Text>
+        <Text style={styles.textPhase}>{this.state.textPhase}</Text>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={this.brokenBiscuit}>
           <View style={styles.btnArea}>
             <Text style={styles.btnText}>
               Quebrar biscoito

@@ -3,7 +3,8 @@ import {
   View,
   Text,
   StyleSheet,
-  Image 
+  TouchableOpacity, 
+  Image,
   } from 'react-native'; 
 
 class App extends Component {
@@ -14,7 +15,17 @@ class App extends Component {
         source={require('./src/images/biscuit.png')}
         style={styles.img}
         />
-        
+
+        <Text style={styles.textPhase}>Alguma frase</Text>
+
+        <TouchableOpacity style={styles.button}>
+          <View style={styles.btnAre}>
+            <Text style={styles.btnText}>
+              Abrir biscoito
+            </Text>
+          </View>
+        </TouchableOpacity>
+
       </View>
     );
   }
@@ -27,7 +38,7 @@ const styles = StyleSheet.create({
   img: {
     width: 250,
     height: 250
-  }
+  },
 });
 
 export default App;
